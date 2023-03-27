@@ -1,0 +1,43 @@
+package chapter3;
+
+import java.util.Scanner;
+public class RPS {
+	public static void main (String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String str[] = {"가위", "바위", "보"};
+		
+		while (true) {
+			System.out.println("컴퓨터와 가위 바위 보 게임을 합니다.");
+			System.out.print("가위 바위 보!>>");
+			String user = scanner.nextLine();
+			
+			int com_num = (int)(Math.random()*3); //컴퓨터 0 = 가위, 1 = 바위 , 2 = 보
+			String com = str[com_num];
+			
+			if(user.equals("그만")) { //"그만" 입력시 종료
+				System.out.print("게임을 종료합니다...");
+				break;
+			}else if(user.equals("가위")||user.equals("바위")||user.equals("보")) {	
+				System.out.print("사용자 = " + user + ", 컴퓨터 = "+ com + ", ");
+			}else { //잘못된 값 입력시 가위바위보 다시 실행
+				System.out.println("제대로 된 값을 입력하십시오.");
+				continue;
+			}
+			
+			
+			int user_num = 3;
+			for(int i = 0; i <str.length;i++) { //내 입력 값을 0,1,2로 바꿈
+				if(str[i].equals(user)) {
+					user_num = i;
+					break;
+				}
+			}
+			
+			int result = user_num - com_num;  //결과 계산
+			if(result == 0)System.out.println("비겼습니다.");
+			else if(result == 1||result == -2)System.out.println("이겼습니다.");
+			else System.out.println("졌습니다.");
+		}
+		scanner.close();
+	}
+}
