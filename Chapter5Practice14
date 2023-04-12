@@ -22,13 +22,13 @@ class Circle implements Shape{
 }
 
 class Oval implements Shape{
-	int MinerAxisx2;
-	int MajorAxisx2;
+	int MinerAxis;
+	int MajorAxis;
 	public Oval() {}
-	public Oval(int MinerAxisx2, int MajorAxisx2) {this.MinerAxisx2=MinerAxisx2;this.MajorAxisx2=MajorAxisx2;}
-	public void draw() {System.out.println(MinerAxisx2+"x"+MajorAxisx2+"에 내접하는 타원입니다.");}
+	public Oval(int MinerAxis, int MajorAxis) {this.MinerAxis=MinerAxis;this.MajorAxis=MajorAxis;}
+	public void draw() {System.out.println(MinerAxis+"x"+MajorAxis+"에 내접하는 타원입니다.");}
 	public double getArea() {
-		double Area = 0.5* MinerAxisx2 * 0.5 * MajorAxisx2 * PI;
+		double Area = 0.5* MinerAxis * 0.5 * MajorAxis * PI;
 		return Area;
 	}
 }
